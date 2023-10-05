@@ -76,11 +76,38 @@
     // substruction(6,9);
     // document.write(sum);
 
-    (function display(){
-        document.write(message);
-    })("Hello");
+    // (function display(){
+    //     document.write(message);
+    // })("Hello");
 
     // display();
+
+
+    // var num = [1,2,3,4,5];
+    // var j = [6,7,8,9];
+ var num = [];
+    for(var i=0; i<5; i++){
+        num[i] = parseInt(prompt("Enter a number: "));
+    }
+    var sum = 0;
+    for(var i=0; i<5; i++){
+        sum = sum + num[i];
+        
+        document.write(" "+num[i]);
+    }
+    document.write( "<br>"+ sum);
+
+
+
+
+
+
+// i.push(6,7);
+// i.pop();
+// i.pop();
+// var k = i.concat(j);
+//     document.write(k);
+
     </script>
 </body>
 </html>
