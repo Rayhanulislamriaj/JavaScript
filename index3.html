@@ -85,17 +85,29 @@
 
     // var num = [1,2,3,4,5];
     // var j = [6,7,8,9];
- var num = [];
-    for(var i=0; i<5; i++){
-        num[i] = parseInt(prompt("Enter a number: "));
-    }
-    var sum = 0;
-    for(var i=0; i<5; i++){
-        sum = sum + num[i];
+//  var num = [];
+//     for(var i=0; i<5; i++){
+//         num[i] = parseInt(prompt("Enter a number: "));
+//     }
+//     var sum = 0;
+//     for(var i=0; i<5; i++){
+//         sum = sum + num[i];
         
-        document.write(" "+num[i]);
-    }
-    document.write( "<br>"+ sum);
+//         document.write(" "+num[i]);
+//     }
+//     document.write( "<br>"+ sum);
+
+// var names = ['Riaj', 'Leeman', 'Pabel'];
+//  var sortedNames = names.reverse();
+// for(var i =0; i<3; i++){
+//     document.write(" "+sortedNames[i]);
+// }
+
+// var nums = [21,22,34,54,34];
+// nums.sort(function(a,b){
+//     return b-a;
+// });
+// document.write(nums);
 
 
 
@@ -107,6 +119,23 @@
 // i.pop();
 // var k = i.concat(j);
 //     document.write(k);
+
+
+function highestScore(scores){
+    // document.write(scores);
+    var max = scores[0];
+
+    for(var i=1; i<scores.length; i++){
+       if(max < scores[i]){
+        max = scores[i];
+       }
+    }
+    return max;
+}
+
+var scores = [34,35,56,32,45];
+var maxScore = highestScore(scores);
+document.write(maxScore);
 
     </script>
 </body>

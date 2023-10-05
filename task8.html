@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Create a function called highestScore that will--</h4>
+    <ul>
+        <li>Receive a 1d array called scores</li>
+        <li>Return the highest score</li>
+    </ul>
+    <script>
+
+
+       function highestScore(scores){
+        var max = scores[0];
+        for(var i=1; i<scores.length; i++){
+            if(max < scores[i]){
+                max = scores[i];
+            }
+        }
+        return max;
+       } 
+       var scores = [3,4,2,45,67];
+       var maxScore = highestScore(scores);
+       document.write("Max number = " + maxScore);
+    </script>
+</body>
+</html>
