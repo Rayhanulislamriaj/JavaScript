@@ -14,7 +14,8 @@
     
     <div class="my-div">
         <a href="#">Contact</a>
-        <button  onclick="myMessage()">Click Me</button>
+        <button  onclick="myMessage1()">Click Me 1</button>
+        <button  onclick="myMessage2()">Click Me 2</button>
     </div>
     <script>
 
@@ -22,8 +23,11 @@
         document.querySelector("li a").innerHTML = "New Tutorial";
         document.querySelector("div a").innerHTML = "New Contact";
 
-        function myMessage(){
+        function myMessage1(){
             alert("Hello Everyone");
+        }
+        function myMessage2(){
+            alert("Hello Button 2");
         }
 
     </script>
