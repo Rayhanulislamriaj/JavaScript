@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Create a function called highestRunScorer that will--</h4>
+    <ul>
+        <li>Receive a 2d array called playersinfo</li>
+        <li>Based on highest score, return the name of the player</li>
+    </ul>
+    <script>
+
+        function highestRunScorer(playersinfo){
+            var highestScorer = playersinfo[0][0];
+            var highestScore = playersinfo[0][1];
+
+            for(var i = 1; i<playersinfo.length; i++){
+                 if(highestScore < playersinfo[i][1]){
+                    highestScore = playersinfo[i][1];
+                    highestScorer = playersinfo[i][0];
+                 }
+            }
+            return highestScorer;
+        }
+
+        var playersinfo = [
+                   ["Ashraful",23],
+                   ["Sakib", 45],
+                   ["Leeman", 56],
+                   ["Riaj", 78],
+                   ["Pabel", 76]
+                ];
+
+               var name = highestRunScorer(playersinfo);
+               document.write(name);
+
+    </script>
+</body>
+</html>
