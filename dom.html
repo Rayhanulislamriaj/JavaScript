@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="dom">DOM</h2>
+    <h2 id="dom">DOM</h2>
+    <h2 id="heading">This is Heading.</h2>
+    <p id="para">I am Paraghaph.</p>
+    <p  class="para">I am Paraghaph.</p>
+    
+    <script>
+
+        var mydom =document.getElementById('dom');
+        mydom.innerHTML = "Hello DOM";
+        var mypara =document.getElementById('para');
+        mypara.innerHTML = "Paraghaph Changed!";
+
+            var heading =document.getElementById('heading');
+            heading.innerHTML = "Good Bye!";
+
+        var h1 = document.getElementsByTagName("h2")[0].innerHTML = "Bye";
+        var h1 = document.getElementsByClassName("para")[0].innerHTML = "Change by ClassName.";
+
+    </script>
+</body>
+</html>

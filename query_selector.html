@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#">Home</a>
+    <ul>
+        <li><a href="#">Tutorial</a></li>
+        <li>Bangladesh</li>
+    </ul>
+    
+    <div class="my-div">
+        <a href="#">Contact</a>
+        <button  onclick="myMessage()">Click Me</button>
+    </div>
+    <script>
+
+        document.querySelector("a").innerHTML = "New Home";
+        document.querySelector("li a").innerHTML = "New Tutorial";
+        document.querySelector("div a").innerHTML = "New Contact";
+
+        function myMessage(){
+            alert("Hello Everyone");
+        }
+
+    </script>
+</body>
+</html>
