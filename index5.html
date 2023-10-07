@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#">Visit Google</a>
+
+    <div id="my-div" style="background-color: blueviolet;">
+        <h1>Hello</h1>
+        <h1>GoodBye</h1>
+    </div>
+
+    <script>
+        var heading1 =document.getElementsByTagName("h1")[0];
+        heading1.innerHTML = "Hello, Value Changed!";
+
+        var heading3 = document.createElement("h1");
+        var text = document.createTextNode("Create Successfully!");
+        heading3.appendChild(text);
+
+        var myDiv = document.getElementById("my-div");
+
+        myDiv.appendChild(heading3);
+
+        var heading2 = document.getElementsByTagName("h1")[1];
+        myDiv.removeChild(heading2);
+
+        var heading0 = document.createElement("h1");
+        var text0 = document.createTextNode("Create 1st Successfully!");
+        heading0.appendChild(text0);
+        var heading1 = document.getElementsByTagName("h1")[0];
+        myDiv.insertBefore(heading0, heading1);
+    </script>
+</body>
+</html>
