@@ -10,7 +10,35 @@
     <img src="images/100.jpg" height="400" width="300" alt="">
     <button onclick="next()">Next</button>
 
-    
-    <script></script>
+
+    <script>
+        var photos = ["images/100.jpg","images/riaj.jpg","images/computer.jpg"];
+        var imgTag= document.querySelector("img");
+
+        var count = 0;
+
+        function next(){
+            count++;
+
+            if(count >= photos.length){
+                count = 0;
+                imgTag.src= photos[count];
+            } else {
+
+                imgTag.src= photos[count];
+            }
+        }
+        function prev(){
+            count--;
+
+            if(count < 0){
+                count = photos.length -1;
+                imgTag.src= photos[count];
+            } else {
+
+                imgTag.src= photos[count];
+            }
+        }
+    </script>
 </body>
 </html>
