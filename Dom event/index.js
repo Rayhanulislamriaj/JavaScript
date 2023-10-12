@@ -29,11 +29,36 @@
 //     console.log(e.target.value);
 // }
 
-const yourself = document.querySelector("#yourself");
+// const yourself = document.querySelector("#yourself");
 
 
-yourself.addEventListener('change', textHandller);
+// yourself.addEventListener('change', textHandller);
 
-function textHandller(e){
-    console.log(e.target.value);
-};
+// function textHandller(e){
+//     console.log(e.target.value);
+// };
+
+
+const form = document.querySelector("form");
+const name = document.querySelector("div #name");
+const email = document.querySelector("div #email");
+const password = document.querySelector("div #password");
+
+
+form.addEventListener("submit", formHandler);
+
+function formHandler(e){
+    e.preventDefault();
+    
+
+    const userInfo = {
+        name : name.value,
+        email : email.value,
+        password : password.value,
+    };
+
+    console.log(userInfo);
+    name.value = "";
+    email.value = "";
+    password.value = "";
+}
