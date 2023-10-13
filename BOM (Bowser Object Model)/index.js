@@ -21,4 +21,3 @@ const profile = document.getElementById('visit-button');
 profile.addEventListener('click', function (){
     location.assign("https://www.facebook.com/rayhanulislam.riaj");
 });
-

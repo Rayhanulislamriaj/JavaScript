@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+    <button class="save-btn">Save</button>
+    <p class="message"></p>
     <script>
         // var firstName = "Rayhanul";
         // var firstName = prompt('Enter your name: ');
@@ -24,7 +26,7 @@
     // var area = base * height;
     // document.write(area);
 
-    var f1 = parseInt(prompt('Enter F:'));
+    // var f1 = parseInt(prompt('Enter F:'));
     // var f2 = prompt('Enter F:');
     // var f3 = prompt('Enter F:');
     // var c = (f - 32) * (5/9);
@@ -36,16 +38,52 @@
     // }
 
 
-    if(f1>0){
+//     if(f1>0){
 
-document.write("Posive");
-} else if(fi<0) {
-document.write("Negative");
-} else {
-document.write("Zero");
-}
+// document.write("Posive");
+// } else if(fi<0) {
+// document.write("Negative");
+// } else {
+// document.write("Zero");
+// }
+
+    // setTimeout(()=> {
+    //   console.log('Hi');
+    // }, 4000)
+
+    // setTimeout(display, 2000);
+
+    // function display(){
+    //     console.log("Display function");
+    // }
+
+    var save = document.querySelector('.save-btn');
+    var message = document.querySelector('.message');
 
     
+
+    // save.addEventListener('click', saveUser);
+
+    // function saveUser(){
+    //     message.textContent = 'User registration successfully!';
+
+    //     setTimeout(() => {
+    //         message.textContent = "";
+    //     },2000);
+    // }
+
+
+    save.addEventListener('click', displayCount);
+
+    function displayCount(){
+        let count = 0;
+        message.textContent = count;
+
+        setInterval(() => {
+            count++;
+            message.textContent = count;
+        },1000);
+    }
     </script>
 </body>
 </html>
