@@ -17,3 +17,9 @@ video.addEventListener("ended", function (){
 video.addEventListener("volumechange", function (){
     console.log("volumechange.");
 })
+
+window.addEventListener("resize", function(){
+    const width = this.window.outerWidth;
+    const height = this.window.outerHeight;
+    console.log(`height: ${height}, width: ${width}`);
+});
