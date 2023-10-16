@@ -67,16 +67,16 @@ class circle {
 
 // let circle_center = 1;
 
-let randomX = Math.random() * window_width;
-    let randomY = Math.random() * window_height;
+// let randomX = Math.random() * window_width;
+//     let randomY = Math.random() * window_height;
 
 let getDistance = function(xpos1,ypos1,xpos2,ypos2){
     var result = Math.sqrt(Math.pow(xpos2 - xpos1, 2) + Math.pow(ypos2 - ypos1, 2));
     return result;
 }
-console.log(getDistance(circle1.xpos, circle1.ypos))
 
-let my_circle1 = new circle(500,500,50,"black", 'A', 0);
+
+let my_circle1 = new circle(500,500,50,"black", 'A', 2);
 let my_circle2 = new circle(300,300,200,"black", 'B', 0);
 
 
@@ -88,7 +88,18 @@ let updateCircle = function(){
     context.clearRect(0, 0, window_width, window_height);
     my_circle1.update();
     my_circle2.update();
+
+    if(getDistance(my_circle1.xpos, my_circle1.ypos, my_circle2.xpos, my_circle2.ypos) 
+    < (my_circle2.radius + my_circle1.radius)){
+        my_circle2.color = "red";
+    }
+     if(getDistance(my_circle1.xpos, my_circle1.ypos, my_circle2.xpos, my_circle2.ypos) 
+    >= (my_circle2.radius + my_circle1.radius)){
+        my_circle2.color = "black";
+    }
 }
+
+
 
 updateCircle();
 // for(var i = 0; i < 1; i++){
