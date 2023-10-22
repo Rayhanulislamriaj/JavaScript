@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .invoice {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        .logo {
+            width: 360px;
+            height: 80px;
+        }
+        .invoice-img {
+            width: 100px;
+            height: 30px;
+        }
+        .invoice-header {
+            text-align: center;
+        }
+        .invoice-body {
+            margin-top: 20px;
+        }
+        .header-content {
+            display: flex;
+        }
+
+        .contact-invoice {
+            flex: 1;
+        }
+        .bill-invoice {
+            text-align: right;
+        }
+        .invoice-table {
+            width: 100%;
+            border-collapse: collapse;
+            
+        }
+        .invoice-table th, .invoice-table td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        .invoice-total {
+            text-align: left;
+        }
+        .invoice-footer {
+            /* text-align: center; */
+            margin-top: 300px;
+            display: flex;
+        }
+        .prepared-footer {
+            flex: 1;
+            text-decoration-line: overline;
+        }
+        .received-footer {
+            text-align: right;
+            text-decoration-line: overline;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice">
+        <div>
+            <div>
+                <img class="logo" src="images/logo.png" alt="">
+            </div>
+            <div>
+                <small>Confidence Center, Shajadpur,</small> <br>
+                <small> Gulshan-2,Dhaka-1212, </small> <br>
+                <small>Dhaka, Bangladesh.</small>
+            </div>
+        </div>
+        <div class="invoice-header">
+            <div><img class="invoice-img" src="images/invoice.JPG" alt=""></div>
+        </div>
+        <div class="invoice-body">
+           <div class="header-content">
+            <div class="contact-invoice">
+            <p><b>Invoice No      :</b> <small>001</small></p>
+            <p><b>Customer Name   :</b> <small>MD Rayhanul Islam</small></p>
+            <p><b>Customer Address:</b> <small>Gulshan-2,Dhaka-1212, Dhaka, Bangladesh.</small></p>
+            <p><b>Contact         :</b> <small>+8801782062349</small></p>
+            </div>
+             <div class="bill-invoice">
+                <p><b>Sales Date:</b> <small>22/10/23</small></p>
+            <p><b>Sales Person:</b> <small>Newaz Ahmed</small></p>
+            </div>
+           </div>
+            <table class="invoice-table">
+                <thead>
+                    <tr>
+                        <th>SL</th>
+                        <th>PRODUCT</th>
+                        <th>QTY</th>
+                        <th>UNIT</th>
+                        <th>RATE</th>
+                        <th>DISCOUNT</th>
+                        <th>AMOUNT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><small>01</small></td>
+                        <td><small>Nirvana Color Top Coat (Glossy Effect) – Hand To Hand 01</small></td>
+                        <td><small>09</small></td>
+                        <td><small>350 ml</small></td>
+                        <td><small>205</small></td>
+                        <td><small>25</small></td>
+                        <td><small>850</small></td>
+                    </tr>
+                    <tr>
+                        <td><small>02</small></td>
+                        <td><small>Nirvana Color Nail Enamel – Moonlight Sea 08</small></td>
+                        <td><small>09</small></td>
+                        <td><small>350 ml</small></td>
+                        <td><small>205</small></td>
+                        <td><small>25</small></td>
+                        <td><small>850</small></td>
+                    </tr>
+                    <tr>
+                        <th colspan="6">Total</th>
+                        <th>1700</th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="invoice-total">
+                <p><b>In Word: One thousand seven hundred Taka only</b></p>
+                <p><b>Note: </b></p>
+            </div>
+        </div>
+        <div class="invoice-footer">
+            <div class="prepared-footer">
+                <b>Prepared By</b>
+            </div>
+            <div class="received-footer">
+                <b>Received By</b>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
