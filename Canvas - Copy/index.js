@@ -19,3 +19,5 @@ context.strokeStyle = "blue";
 context.lineWidth = 20;
 context.arc(100, 100, 50, 0, Math.PI * 2, false);
 context.stroke();
+
+
