@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+}
+#main_menu{
+    background-color: brown;
+}
+#main_menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+#main_menu li{
+    display: inline-block;
+    position: relative;
+}
+#main_menu li a{
+    text-decoration: none;
+    display: block;
+    padding: 12px 15px;
+    color: white;
+}
+#main_menu li a:hover{
+    background: goldenrod;
+}
+
+
+#main_menu ul ul{
+    position: absolute;
+    left: 0;
+    top: 39px;
+    background: green;
+    width: 200px;
+    display: none;
+    z-index: 999;
+}
+#main_menu ul ul li{
+    display: block;
+}
+#main_menu ul li:hover ul{
+    display: block;
+}
+#main_menu ul li:hover a{
+    background: goldenrod;
+}
+#main_menu ul li:hover li a{
+    background: green;
+}
+#main_menu ul ul li a:hover{
+    background: goldenrod;
+}
