@@ -18,6 +18,7 @@
     font-size: 35px;
     margin-bottom: 0;
 }
+
 #hero_area p{
     color: white;
     font-size: 15px;
@@ -52,3 +53,4 @@
     opacity: 0.4;
     z-index: -1;
 }
+
