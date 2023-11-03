@@ -1,3 +1,4 @@
+
 body{
     margin: 0;
 }
@@ -48,4 +49,51 @@ body{
 }
 #main_menu ul ul li a:hover{
     background: goldenrod;
+}
+
+table, th, td {
+    border: 2px black;
+    border-collapse: collapse;
+    padding: 19px 25px;
+}
+table{
+    background: #30336b;
+    color: white;
+    margin: 15px 15px auto;
+}
+thead tr{
+    background: rgb(255, 0, 242);
+    color: black;
+    border: 1px solid black;
+}
+thead tr:hover{
+    background: gray;
+    color: white;
+}
+tbody tr td{
+    border: 1px solid black;
+}
+tbody tr:hover{
+    background: aquamarine;
+    color: black;
+}
+.flex-container{
+    display: flex;
+background: #686de0;
+margin-top: 10px;
+}
+.flex-container > div{
+    background: white;
+    margin: 10px;
+    padding: 32px 35px;
+    font-size: 35px;
+}
+.div6 {
+    flex-grow: 3;
+    text-align: center;
+}
+.flex-container > div:hover{
+    background: #7ed6df;
+    color: white;
+    opacity: .9;
 }
