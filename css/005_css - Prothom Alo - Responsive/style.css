@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body{
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -36,7 +39,7 @@ body{
     color: #6CA2CB;
 }
 #content{
-    width: 840px;
+    width: 1140px;
     margin: 10px auto;
     border-bottom: 1px solid #ddd;
     overflow: hidden;
