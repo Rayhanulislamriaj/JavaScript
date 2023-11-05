@@ -18,10 +18,12 @@ img{
 #body_area{
     background: #f0f2f5;
 }
-#content_area{
+.container{
     width: 980px;
     padding: 20px;
     margin: 0 auto;
+}
+#content_area{
     display: flex;
     justify-content: space-between;
     padding-bottom: 112px;
@@ -42,12 +44,14 @@ img{
 }
 .form_area{
     flex-basis: 396px;
+    text-align: center;
 }
 .form_area form{
     background: #fff;
     box-shadow: 0 0 10px #ddd;
     border-radius: 10px;
     padding: 15px;
+    text-align: center;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -60,4 +64,101 @@ img{
     padding: 14px 16px;
     font-size: 17px;
     border-radius: 6px;
+    margin-bottom: 15px;
+}
+.form_area input[type="button"] {
+    background: #1877f2;
+    border: 1px solid #1877f2;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.form_area button {
+    background: #42b72a;
+    border: 1px solid #42b72a;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 16px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+.form_area a {
+    color: #1877f2;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+.form_area a:hover {
+    text-decoration: underline;
+}
+
+
+.form_area p{
+    margin-top: 20px;
+    color: #1c1e21;
+    font-size: 12px;
+}
+.form_area p a{
+    color: #1c1e21;
+}
+
+/* Footer Area */
+#footer_area{
+    background: #fff;
+}
+#footer_area ul{
+    text-align: left;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+#footer_area ul li{
+    display: inline-block;
+    margin: 0 5px;
+}
+#footer_area ul li a{
+    color: #737373;
+    font-size: 12px;
+    text-decoration: none;
+}
+#footer_area ul li a:hover{
+    text-decoration: underline;
+}
+#footer_area p{
+    font-size: 12px;
+    color: #737373;
+}
+
+@media screen and (max-width: 420px) {
+    .container{
+        width: 96%;
+    }
+    #content_area{
+        flex-direction: column;
+        padding: 35px 0;
+    }
+    .left_side{
+        flex-basis: 100%;
+        text-align: center;
+    }
+    .left_side h2{
+        font-size: 12px;
+        padding-left: 0;
+        margin-bottom: 40px;
+    }
+    .form_area{
+        flex-basis: 50%;
+        text-align: center;
+    }
 }
