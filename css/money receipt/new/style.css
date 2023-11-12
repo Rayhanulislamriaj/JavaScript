@@ -1,0 +1,46 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+body{
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    width: 840px;
+}
+.card{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: 2px solid gray;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+    margin-top: 50px;
+}
+
+.left_header img{
+    max-width: 70%;
+}
+.header_right{
+    padding-left: 50px;
+}
+.card-body div{
+    
+    padding: 20px;
+}
+input[type="checkbox"]{
+    margin-right: 3px;
+}
+.footer{
+    margin-top: 100px;
+}

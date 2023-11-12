@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Receipt</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .receipt-container {
+        width: 877px;
+        border: 1px solid #000;
+        padding: 15px;
+        margin: auto;
+        background-color: #fff;
+    }
+    .header, .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header {
+        margin-bottom: 20px;
+    }
+    .logo {
+        width: 150px; /* Adjust as needed */
+        height: auto;
+        background-image: url('logo.jpg'); /* Replace with your logo path */
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .title {
+        text-align: center;
+        flex-grow: 1;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        min-width: 10px;
+        display: inline-block;
+    }
+    input[type="text"], input[type="checkbox"] {
+        margin-right: 10px;
+    }
+    .signature-space {
+        padding-top: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .signature-line {
+        border-top: 1px solid #000;
+        width: 200px;
+        text-align: center;
+    }
+    .submit-btn {
+        width: 100%;
+        background-color: #4CAF50;
+        border: none;
+        padding: 10px;
+        color: white;
+        cursor: pointer;
+    }
+    @media print 
+    {
+        body {
+            margin-top: 70px;
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+        width: 90%;
+        font: 10pt "Tahoma";
+    }
+    
+    .receipt-container {
+        width: 215mm; /* Adjust the width to fit within the printable area of A4 */
+        border: 1px solid #000;
+        /* padding: 15px; */
+         margin: auto; 
+        box-sizing: border-box; /* Include padding in the container's width */
+    }
+        .header, .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header {
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 150px; /* Adjust as needed */
+            height: auto;
+            background-image: url('logo.jpg'); /* Replace with your logo path */
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .title {
+            text-align: center;
+            flex-grow: 1;
+        }
+        .form-group {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        label {
+            min-width: 10px;
+            display: inline-block;
+        }
+        input[type="text"], input[type="checkbox"] {
+            margin-right: 10px;
+            border : none;
+        }
+        .signature-space {
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .signature-line {
+            border-top: 1px solid #000;
+            width: 200px;
+            text-align: center;
+        }
+        .submit-btn {
+            display: none;
+    }
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/words-to-numbers/1.5.0/w2n.min.js"></script>
+
+</head>
+<body>
+<div class="receipt-container">
+    <div class="header">
+        <!-- Corrected the img src attribute -->
+        <img src="Safwah_Main_logo-removebg-preview.png" alt="Company Logo" style="float: left; width: 200px; height: auto;" />
+        <div class="title">
+            <h2>MONEY RECEIPT</h2>
+        </div>
+        <div class="voucher-info">
+            Voucher No: <span id="voucher_no"></span><br>
+            Date & Time: <span id="date_time"></span>
+        </div>
+    </div>
+    <div class="body">
+        <form action="submit_receipt.php" method="post">
+            <div class="form-group">
+                <label>SL. No.:</label>
+                <span id="sl_no">9001</span>
+            </div>
+            <div class="form-group">
+                <label>Received With Thanks From:</label>
+                <input type="text" name="received_from" style= "width: 600px;"/>
+            </div>
+            <div class="form-group">
+                <label>Amount of Taka:</label>
+                <input type="text" id="amount" name="amount" onkeyup="convertToWords(this.value)" />
+                <label>In Words:</label>
+                <span id="amount_words"></span>
+            </div>
+            <!-- Payment method details -->
+            <div class="form-group payment-methods">
+                <input type="checkbox" id="cash" name="payment_method" value="cash" />
+                <label for="cash">By Cash</label>
+                <input type="checkbox" id="cheque" name="payment_method" value="cheque" />
+                <label for="cheque">By Cheque No.:</label>
+                <input type="text" id="cheque_no" name="cheque_no" />
+                <label>Bank:</label>
+                <input type="text" name="bank" />
+                <label>Date:</label>
+                <input type="date" name="date" />
+            </div>
+                <!-- MFS details -->
+            <div class="form-group mfs-details">
+                <input type="checkbox" id="mfs" name="payment_method" value="mfs" />
+                <label for="mfs">MFS</label><br>
+                <label>Sender No.:</label>
+                <input type="text" name="sender_no" />
+                <label>Receiver No.:</label>
+                <input type="text" name="receiver_no" />
+                <label>Transaction No.:</label>
+                <input type="text" name="transaction_no" />
+            </div>
+            </div>
+            <div class="form-group">
+                <label>For The Purpose Of:</label>
+                <input type="text" name="purpose" />
+                <!-- <label>Contact No:</label>
+                <input type="text" name="contact_no" /> -->
+            </div>
+            <div class="signature-space">
+                <!-- <label>Taka:</label> -->
+                <!-- <span id="total_amount"></span> -->
+                <div class="signature-line">Received By</div>
+                <div class="signature-line">Authorized Signature</div>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="submit-btn" value="Submit Receipt">
+            </div>
+        </form>
+    </div>
+    <script>
+function numberToIndianWords(number) {
+    const words = [
+        'Zero', 'One', 'Two', 'Three', 'Four',
+        'Five', 'Six', 'Seven', 'Eight', 'Nine',
+        'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen',
+        'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'
+    ];
+    const tens = [
+        '', '', 'Twenty', 'Thirty', 'Forty',
+        'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'
+    ];
+
+    if (number < 20) {
+        return words[number];
+    } else if (number < 100) {
+        return tens[Math.floor(number / 10)] + (number % 10 !== 0 ? ' ' + words[number % 10] : '');
+    } else if (number < 1000) {
+        return words[Math.floor(number / 100)] + ' Hundred' + (number % 100 !== 0 ? ' ' + numberToIndianWords(number % 100) : '');
+    } else if (number < 100000) {
+        return numberToIndianWords(Math.floor(number / 1000)) + ' Thousand' + (number % 1000 !== 0 ? ' ' + numberToIndianWords(number % 1000) : '');
+    } else { // Up to 99,999
+        return numberToIndianWords(Math.floor(number / 100000)) + ' Lac' + (number % 100000 !== 0 ? ' ' + numberToIndianWords(number % 100000) : '');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('voucher_no').textContent = '1001';
+    document.getElementById('date_time').textContent = new Date().toLocaleString();
+
+    var amountInput = document.getElementById('amount');
+    amountInput.addEventListener('input', function(e) {
+        var amount = parseInt(e.target.value, 10);
+        if (!isNaN(amount)) {
+            var words = numberToIndianWords(amount);
+            document.getElementById('amount_words').textContent = words + ' Taka';
+            document.getElementById('total_amount').textContent = 'Taka: ' + numeral(amount).format('0,0');
+        } else {
+            document.getElementById('amount_words').textContent = '';
+            document.getElementById('total_amount').textContent = '';
+        }
+    });
+});
+</script>
+
+
+</body>
+</html>
