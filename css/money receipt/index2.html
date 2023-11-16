@@ -213,10 +213,12 @@ function numberToIndianWords(number) {
         'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'
     ];
     const tens = [
-        '', '', 'Twenty', 'Thirty', 'Forty',
+        '', '', 'Tweenty', 'Thirty', 'Forty',
         'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'
     ];
-
+    const tens2 = [
+        '', '', 'Tweenty', 'Thirty', 'Forty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'
+    ];
     if (number < 20) {
         return words[number];
     } else if (number < 100) {
@@ -246,6 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('total_amount').textContent = '';
         }
     });
+    
 });
 </script>
 
