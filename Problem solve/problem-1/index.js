@@ -9,3 +9,26 @@ console.log(getRandomNumber(1,6));
 
 const students = ["Riaj", "Jadid", "Zawad", "Mahfuz", "Nawaz"];
 console.log(students.sort());
+
+// কিভাবে আমরা আমাদের শ্রেণীকক্ষের সকলের ্র রোল ক্রম অনুযায়ী সাজাতে পারি?
+
+const studentRolls = [2,3,4,12,5,89,67];
+
+function getStudentRolls(a, b){
+    return a - b;
+}
+
+const roll = studentRolls.sort(getStudentRolls);
+console.log(roll);
+
+//Leap Year
+
+function isLeapYear(year){
+    if((year % 400 === 0) || ((year % 4 === 0) && (year % 100 != 0))){
+       console.log(`${year} is Leap year`);
+    } else {
+        console.log(`${year} is not Leap year`);
+    }
+}
+
+isLeapYear(2029);
