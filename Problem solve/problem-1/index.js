@@ -10,7 +10,7 @@ console.log(getRandomNumber(1,6));
 const students = ["Riaj", "Jadid", "Zawad", "Mahfuz", "Nawaz"];
 console.log(students.sort());
 
-// কিভাবে আমরা আমাদের শ্রেণীকক্ষের সকলের ্র রোল ক্রম অনুযায়ী সাজাতে পারি?
+// কিভাবে আমরা আমাদের শ্রেণীকক্ষের সকলের রোল ক্রম অনুযায়ী সাজাতে পারি?
 
 const studentRolls = [2,3,4,12,5,89,67];
 
