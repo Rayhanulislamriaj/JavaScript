@@ -32,3 +32,32 @@ function isLeapYear(year){
 }
 
 isLeapYear(2029);
+
+
+// কোনো Sentence এ কতগুলো vowel আছে তা নির্ণয় করা যায়?
+let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+
+function countVowels(sentence){
+    let count = 0;
+    const letters = Array.from(sentence);
+
+    letters.forEach(function(value){
+        if(vowels.includes(value)){
+            count++;
+        }
+    });
+    return count;
+}
+
+console.log(countVowels("I love Bangladesh"));
+
+
+// কোন Array থেকে duplicate নাম্বার গুলোকে কিভাবে বের করে আনতে পারি?
+
+const numbers = [1, 2, 3, 3, 4, 5, 4, 2, 5, 6, 7, 8];
+
+let duplicate = numbers.filter(function(value, index, array){
+    return array.indexOf(value) !== index;
+});
+
+console.log(duplicate);
