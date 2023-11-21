@@ -10,7 +10,7 @@ console.log(getRandomNumber(1,6));
 const students = ["Riaj", "Jadid", "Zawad", "Mahfuz", "Nawaz"];
 console.log(students.sort());
 
-// কিভাবে আমরা আমাদের শ্রেণীকক্ষের সকলের ্র রোল ক্রম অনুযায়ী সাজাতে পারি?
+// কিভাবে আমরা আমাদের শ্রেণীকক্ষের সকলের রোল ক্রম অনুযায়ী সাজাতে পারি?
 
 const studentRolls = [2,3,4,12,5,89,67];
 
@@ -34,6 +34,7 @@ function isLeapYear(year){
 isLeapYear(2029);
 
 
+<<<<<<< HEAD
 // কোনো Sentence এ কতগুলো vowel আছে তা নির্ণয় করা যায়?
 let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
 
@@ -61,3 +62,6 @@ let duplicate = numbers.filter(function(value, index, array){
 });
 
 console.log(duplicate);
+=======
+//New One
+>>>>>>> 8630a34e992ae9b0eb6dc834990d2db7cca4ad6c
