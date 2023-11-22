@@ -1,19 +1,12 @@
-// class Car {
-//   constructor(name, year) {
-//     this.name = name;
-//     this.year = year;
-//   }
-//   age() {
-//     const date = new Date();
-//     return date.getFullYear() - this.year;
-//   }
-// }
+function longestString(names){
+  let longestWord = '';
 
-// const myCar = new Car("Ford");
-// console.log(`My ${myCar.name} car was  ${myCar.age()} years old.`)
-
-function myFunction(a){
-  let b = 10;
-  b += a;
+  for(name of names) {
+    if(name.length > longestWord.length){
+      longestWord = name;
+    }
+  }
+  return [ longestWord, names.indexOf(longestWord)];
 }
-console.log(myFunction(3));
+
+console.log(longestString(['foo', 'bar','riaj', 'MD Rayhanul Islam']));
