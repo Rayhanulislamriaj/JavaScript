@@ -1,57 +1,39 @@
 // const person = {
-//   name: "John",
-//   age: 30,
-//   city: "New York"
-// };
-
-// const personArray = Object.values(person);
-
-// for (let i = 0; i < personArray.length; i++){
-//   console.log(personArray[i]);
+//   fullName: function(city, country) {
+//     return this.firstName + " " + this.lastName + " " + this.firstName + " " + city + " " + country;
+//   }
+// }
+// const person1 = {
+//   firstName:"John",
+//   lastName: "Doe"
+// }
+// const person2 = {
+//   firstName:"Mary",
+//   lastName: "Doe"
 // }
 
-// console.log(JSON.stringify(person));
+// This will return "John Doe":
+// let x = person.fullName.apply(person1, ['Dhaka', 'Bangladesh']);
 
-// let c = "Hello Peter!";
-// console.log(c.toUpperCase());
+// console.log(x);
 
+// Math.max(45,34,37);
 
+// let maxValue = Math.max.apply(null, [45,34,37]);
 
-
-
-// const person = {
-//   firstName: "John",
-//   lastName: "Doe",
-//   language: "",
-//   get fullName(){
-//     return this.firstName + " " + this.lastName;
-//   }
-// };
+// console.log(maxValue);
 
 
+function temporary() {
+  let counter = 0;
 
-// const person = {
-//   firstName: "John",
-//   lastName: "Doe",
-//   fullName: function() {
-//     return this.firstName + " " + this.lastName;
-//   }
-// };
-
-
-function Person(first, last, age) {
-  this.firstName = first;
-  this.lastName = last;
-  this.age = age;
-  this.fullName = function(){
-    return this.firstName + ' ' + this.lastName;
+  return function() {
+    counter += 1;
   }
 }
 
+const add = temporary();
 
-const riaj = new Person('Rayhanul Islam', 'Riaj', 25);
-const sumit = new Person('Sumit', 'Saha', 35);
-const Jadid = new Person('Jadid', 'Rahman', 25);
-
-riaj.country = 'Bangladesh';
-console.log(riaj);
+console.dir(add);
+add();
+add();
