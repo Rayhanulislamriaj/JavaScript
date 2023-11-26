@@ -1,39 +1,60 @@
-// const person = {
-//   fullName: function(city, country) {
-//     return this.firstName + " " + this.lastName + " " + this.firstName + " " + city + " " + country;
+// array = [1, 3, 10, 11, 14];
+// goal = 13;
+
+// const twoSum = (array, goal) => {
+//   let mapOfNumbers = {};
+//   let twoIndexes = [];
+
+//   for(let i = 0; i < array.length; i++) {
+//     mapOfNumbers[array[i]] = i;
+//   }
+
+//   for(let i = 0; i < array.length; i++) {
+//     let target = goal - arr[i];
+//     if(mapOfNumbers[target] !== null && mapOfNumbers[target] !== i){
+//       twoIndexes.push(i);
+//       twoIndexes.push(mapOfNumbers[target]);
+//     }
+//   }
+//   // return twoIndexes;
+//   console.log(twoIndexes);
+// }
+
+
+// class Car {
+//   constructor(brand) {
+//     this.carname = brand;
+//   }
+//   present() {
+//     return 'I have a ' + this.carname;
 //   }
 // }
-// const person1 = {
-//   firstName:"John",
-//   lastName: "Doe"
+
+// class Model extends Car {
+//   constructor(brand, mod) {
+//     super(brand);
+//     this.model = mod;
+//   }
+//   show() {
+//     return this.present() + ', it is a ' + this.model;
+//   }
 // }
-// const person2 = {
-//   firstName:"Mary",
-//   lastName: "Doe"
-// }
 
-// This will return "John Doe":
-// let x = person.fullName.apply(person1, ['Dhaka', 'Bangladesh']);
+// let myCar = new Model("Ford", "Mustang");
 
-// console.log(x);
-
-// Math.max(45,34,37);
-
-// let maxValue = Math.max.apply(null, [45,34,37]);
-
-// console.log(maxValue);
+// console.log(myCar.show());
 
 
-function temporary() {
-  let counter = 0;
-
-  return function() {
-    counter += 1;
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  get cnam() {
+    return this.carname;
+  }
+  set cnam(x) {
+    this.carname = x;
   }
 }
 
-const add = temporary();
-
-console.dir(add);
-add();
-add();
+const myCar = new Car("Ford");
