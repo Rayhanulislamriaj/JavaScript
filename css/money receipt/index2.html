@@ -1,257 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Money Receipt</title>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
+  <title>Invoice</title>
+  <style>
+    .invoice-header{
+        display: grid;
+        grid-template-columns: 6fr 1fr 5fr;
+        padding-bottom: 15px;
     }
-    
-    .receipt-container {
-        width: 877px;
-        border: 1px solid #000;
+    .header-grid-item {
+        padding: 5px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+    .header-left{
+      text-align: left;
+    }
+    .header-right{
+      background: black;
+      color: white;
+    }
+    .grid-div{
+        display: grid;
+        grid-template-columns: 6fr 1fr 5fr;
+        padding-bottom: 10px;
+    }
+    .grid-item {
+        border: .5px solid rgba(0, 0, 0, 0.8);
         padding: 15px;
-        margin: auto;
-        background-color: #fff;
+        font-size: 12px;
+        border-radius: 10px;
     }
-    .header, .footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .grid-item-2{
+        border: 0px solid;
     }
-    .header {
-        margin-bottom: 20px;
+    table {
+      border-collapse: collapse;
+      width: 100%;
     }
-    .logo {
-        width: 150px; /* Adjust as needed */
-        height: auto;
-        background-image: url('logo.jpg'); /* Replace with your logo path */
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    .title {
-        text-align: center;
-        flex-grow: 1;
-    }
-    .form-group {
-        margin-bottom: 20px;
-    }
-    label {
-        min-width: 10px;
-        display: inline-block;
-    }
-    input[type="text"], input[type="checkbox"] {
-        margin-right: 10px;
-    }
-    .signature-space {
-        padding-top: 25px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .signature-line {
-        border-top: 1px solid #000;
-        width: 200px;
-        text-align: center;
-    }
-    .submit-btn {
-        width: 100%;
-        background-color: #4CAF50;
-        border: none;
-        padding: 10px;
-        color: white;
-        cursor: pointer;
-    }
-    @media print 
-    {
-        body {
-            margin-top: 70px;
-            display: inline-block;
-            justify-content: center;
-            align-items: center;
-        width: 90%;
-        font: 10pt "Tahoma";
-    }
-    
-    .receipt-container {
-        width: 215mm; /* Adjust the width to fit within the printable area of A4 */
-        border: 1px solid #000;
-        /* padding: 15px; */
-         margin: auto; 
-        box-sizing: border-box; /* Include padding in the container's width */
-    }
-        .header, .footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header {
-            margin-bottom: 20px;
-        }
-        .logo {
-            width: 150px; /* Adjust as needed */
-            height: auto;
-            background-image: url('logo.jpg'); /* Replace with your logo path */
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-        .title {
-            text-align: center;
-            flex-grow: 1;
-        }
-        .form-group {
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        label {
-            min-width: 10px;
-            display: inline-block;
-        }
-        input[type="text"], input[type="checkbox"] {
-            margin-right: 10px;
-            border : none;
-        }
-        .signature-space {
-            padding-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .signature-line {
-            border-top: 1px solid #000;
-            width: 200px;
-            text-align: center;
-        }
-        .submit-btn {
-            display: none;
-    }
-    }
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/words-to-numbers/1.5.0/w2n.min.js"></script>
 
+    th, td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+
+    .invoice-footer {
+      text-align: left;
+    }
+    @media print {
+      .header-right{
+      background: white;
+      color: black;
+    }
+      .grid-item {
+        font-size: 10px;
+    }
+      th, td {
+        font-size: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="receipt-container">
-    <div class="header">
-        <!-- Corrected the img src attribute -->
-        <img src="Safwah_Main_logo-removebg-preview.png" alt="Company Logo" style="float: left; width: 200px; height: auto;" />
-        <div class="title">
-            <h2>MONEY RECEIPT</h2>
-        </div>
-        <div class="voucher-info">
-            Voucher No: <span id="voucher_no"></span><br>
-            Date & Time: <span id="date_time"></span>
-        </div>
+  <div class="header-img">
+    <img src="Safwah-Limited-logo.png" alt="SAFWAH LIMITED">
+  </div>
+  <div class="invoice-header">
+    <div class="header-left header-grid-item">
+      <small>Confidence Center, Shajadpur,</small> <br>
+      <small>Gulshan-2, Dhaka-1212,</small> <br>
+      <small>Dhaka Division, Bangladesh</small> <br>
     </div>
-    <div class="body">
-        <form action="submit_receipt.php" method="post">
-            <div class="form-group">
-                <label>SL. No.:</label>
-                <span id="sl_no">9001</span>
-            </div>
-            <div class="form-group">
-                <label>Received With Thanks From:</label>
-                <input type="text" name="received_from" style= "width: 600px;"/>
-            </div>
-            <div class="form-group">
-                <label>Amount of Taka:</label>
-                <input type="text" id="amount" name="amount" onkeyup="convertToWords(this.value)" />
-                <label>In Words:</label>
-                <span id="amount_words"></span>
-            </div>
-            <!-- Payment method details -->
-            <div class="form-group payment-methods">
-                <input type="checkbox" id="cash" name="payment_method" value="cash" />
-                <label for="cash">By Cash</label>
-                <input type="checkbox" id="cheque" name="payment_method" value="cheque" />
-                <label for="cheque">By Cheque No.:</label>
-                <input type="text" id="cheque_no" name="cheque_no" />
-                <label>Bank:</label>
-                <input type="text" name="bank" />
-                <label>Date:</label>
-                <input type="date" name="date" />
-            </div>
-                <!-- MFS details -->
-            <div class="form-group mfs-details">
-                <input type="checkbox" id="mfs" name="payment_method" value="mfs" />
-                <label for="mfs">MFS</label><br>
-                <label>Sender No.:</label>
-                <input type="text" name="sender_no" />
-                <label>Receiver No.:</label>
-                <input type="text" name="receiver_no" />
-                <label>Transaction No.:</label>
-                <input type="text" name="transaction_no" />
-            </div>
-            </div>
-            <div class="form-group">
-                <label>For The Purpose Of:</label>
-                <input type="text" name="purpose" />
-                <!-- <label>Contact No:</label>
-                <input type="text" name="contact_no" /> -->
-            </div>
-            <div class="signature-space">
-                <!-- <label>Taka:</label> -->
-                <!-- <span id="total_amount"></span> -->
-                <div class="signature-line">Received By</div>
-                <div class="signature-line">Authorized Signature</div>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="submit-btn" value="Submit Receipt">
-            </div>
-        </form>
+    <div class="header-right header-grid-item">
+      <h1>INVOICE</h1>
     </div>
-    <script>
-function numberToIndianWords(number) {
-    const words = [
-        'Zero', 'One', 'Two', 'Three', 'Four',
-        'Five', 'Six', 'Seven', 'Eight', 'Nine',
-        'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen',
-        'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'
-    ];
-    const tens = [
-        '', '', 'Tweenty', 'Thirty', 'Forty',
-        'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'
-    ];
-    const tens2 = [
-        '', '', 'Tweenty', 'Thirty', 'Forty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'
-    ];
-    if (number < 20) {
-        return words[number];
-    } else if (number < 100) {
-        return tens[Math.floor(number / 10)] + (number % 10 !== 0 ? ' ' + words[number % 10] : '');
-    } else if (number < 1000) {
-        return words[Math.floor(number / 100)] + ' Hundred' + (number % 100 !== 0 ? ' ' + numberToIndianWords(number % 100) : '');
-    } else if (number < 100000) {
-        return numberToIndianWords(Math.floor(number / 1000)) + ' Thousand' + (number % 1000 !== 0 ? ' ' + numberToIndianWords(number % 1000) : '');
-    } else { // Up to 99,999
-        return numberToIndianWords(Math.floor(number / 100000)) + ' Lac' + (number % 100000 !== 0 ? ' ' + numberToIndianWords(number % 100000) : '');
-    }
-}
+    <!-- <h1>SAFWAH LIMITED</h1>
+    <p>A path for prosperity</p> -->
+  </div>
+  <div class="grid-div">
+    <div class="left-div grid-item">
+      <p>INVOICE NO:</p>
+      <p>CUSTOMER NAME:</p>
+      <p>CUSTOMER ADDRESS:</p>
+      <p>CONTACT:</p>
+    </div>
+    <div class="grid-item grid-item-2"></div>
+    <div class="right-div grid-item">
+      <P>SALES DATE:</P>
+      <P>SALES PERSON:</P>
+      <P>DELIVERY ADDRESS:</P>
+      <p>DELIVERY INSTRUCTION:</P>
+    </div>
+  </div>
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('voucher_no').textContent = '1001';
-    document.getElementById('date_time').textContent = new Date().toLocaleString();
+  <div class="invoice-body">
+    <table>
+      <thead>
+        <tr>
+          <th>SL</th>
+          <th>PRODUCT</th>
+          <th>QTY</th>
+          <th>UNIT</th>
+          <th>RATE</th>
+          <th>DISCOUNT</th>
+          <th>AMOUNT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01</td>
+          <td>J.Cat Sparkling Powder (Gingerbread Sugar)</td>
+          <td>09</td>
+          <td>350 ml</td>
+          <td>205</td>
+          <td>25</td>
+          <td>850</td>
+        </tr>
+        <tr>
+          <td>02</td>
+          <td>Nirvana Color Top Coat (Glossy Effect)- Hand To Hand 01</td>
+          <td>15</td>
+          <td>350 g</td>
+          <td>25</td>
+          <td>35</td>
+          <td>205</td>
+        </tr>
+        <tr>
+          <td>03</td>
+          <td>Groome Charcoal Purifying & Deep Cleansing Nose Strips (Monthly Pack) 5pcs 0286566kfkgkfgk 6665 Eryuopkhf 00019648-Pink</td>
+          <td>20</td>
+          <td>1 BOX</td>
+          <td>350</td>
+          <td>12</td>
+          <td>1250</td>
+        </tr>
+        <tr>
+          <td>04</td>
+          <td>Flash All Glow DuoLiquid Eyeshadow-04 (Rainbow Galaxy)</td>
+          <td>333</td>
+          <td>1 PCS</td>
+          <td>1206</td>
+          <td>56</td>
+          <td>2500</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="6">Total Bill</th>
+          <th colspan="1">10560</th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
 
-    var amountInput = document.getElementById('amount');
-    amountInput.addEventListener('input', function(e) {
-        var amount = parseInt(e.target.value, 10);
-        if (!isNaN(amount)) {
-            var words = numberToIndianWords(amount);
-            document.getElementById('amount_words').textContent = words + ' Taka';
-            document.getElementById('total_amount').textContent = 'Taka: ' + numeral(amount).format('0,0');
-        } else {
-            document.getElementById('amount_words').textContent = '';
-            document.getElementById('total_amount').textContent = '';
-        }
-    });
-    
-});
-</script>
-
-
+  <div class="invoice-footer">
+    <p>IN WORD: TEN THOUSAND FIVE HUNDRED AND SIXTY TAKA</p>
+    <p>NOTE:</p>
+  </div>
 </body>
 </html>
