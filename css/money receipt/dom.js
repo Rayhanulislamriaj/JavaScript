@@ -1,20 +1,14 @@
-function myMove(){
-    const animate = document.getElementById('animate');
-    let pos = 0;
+const para = document.createElement('p');
+const node = document.createTextNode('This is new');
 
-  const interval = setInterval(frame, 5);
+para.appendChild( node );
 
-    function frame() {
-        if(pos < 350 ){
-            pos++;
-            animate.style.top = pos + 'px';
-            animate.style.left = pos + 'px';
-        } else {
-            clearInterval(interval);
-        }
-    }
+const div = document.getElementById("div1");
+const p2 = document.getElementById("p2");
 
+div.replaceChild(para, p2);
 
+const myCollection = document.getElementsByTagName("p");
+for (let i = 0; i < myCollection.length; i++) {
+  myCollection[i].style.color = "red";
 }
-
-myMove();
