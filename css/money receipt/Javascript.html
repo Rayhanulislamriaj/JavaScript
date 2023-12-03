@@ -4,36 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript</title>
-    <style>
-        #container {
-  width: 400px;
-  height: 400px;
-  position: relative;
-  background: yellow;
-}
-#animate {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  background: red;
-}
-    </style>
+
 </head>
 <body>
-  <div id="div1">
-    <p id="p1">This is a paragraph.</p>
-    <p id="p2">This is another paragraph.</p>
-    
-    <div>
-      <button id="open" onclick="openWindow()">Open Window</button>
-      <button id="close" onclick="closeWindow()">Close Window</button>
-    </div>
-
-    <div id="width"></div>
-    <div id="height"></div>
+  <div>
+    <input 
+        type="button" 
+        value="Set name cookie" 
+        onclick="setCookie('name', 'Rayhanul Islam', 2)"
+    />
   </div>
-   
-    <script src="./bom.js"></script>
+  <div>
+    <input type="button" value="Set User cookie" onclick=""/>
+  </div>
+  <div>
+    <input type="button" value="GEt name cookie" onclick=""/>
+  </div>
+  <div>
+    <input type="button" value="Get User cookie" onclick=""/>
+  </div>
+
+
+
+    <script src="./cockie.js"></script>
     <!-- <script src="./style.js"></script> -->
 </body>
 </html>
