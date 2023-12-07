@@ -10,7 +10,10 @@ function getLocation(){
 
 function showPosition(position) {
     display.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
+    "<br>Longitude: " + position.coords.longitude +
+    "<br>heading: " + position.coords.heading +
+    "<br>timestamp: " + position.timestamp +
+    "<br>accuracy: " + position.coords.accuracy;
 }
 
 function showError(error) {
