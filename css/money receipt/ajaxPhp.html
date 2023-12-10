@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Let typing something bellow:</h3>
+
+    <p>Suggestions: <span id="txtHint"></span></p>
+    <p>First Name: <input type="text" id="txt1" onkeyup="showHint(this.value)"></input></p>
+
+    <script>
+        const suggestions = document.getElementById("txtHint");
+        function showHint(str) {
+            if(str.length == 0) {
+                suggestions.innerHTML = "";
+                return;
+            }
+            const xhr =  new XMLHttpRequest();
+            xhr.onload = function() {
+                suggestions.innerHTML = this.responseText;
+            }
+            xhr.open('GET', "ajax.php?q="+str);
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
