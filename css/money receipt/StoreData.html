@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Store Date</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        const display = document.getElementById("demo");
+        //Storing Data
+        const data = {
+            name: 'Riaj',
+            age: 25,
+            city: "Chatkhil"
+        };
+        const jasnData = JSON.stringify(data);
+        localStorage.setItem("TestJSON", jasnData);
+
+        //Restoring Data
+        let text = localStorage.getItem("TestJSON");
+        let obj = JSON.parse(text);
+        display.innerHTML = obj.name;
+    </script>
+</body>
+</html>
