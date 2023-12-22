@@ -18,17 +18,25 @@
 // console.log(obj);
 
 
-const obj = {name: "John", age: 30, city: "New York"};
+// const obj = {name: "John", age: 30, city: "New York"};
 
-console.log(obj);
+// console.log(obj);
 
-const myJSON = JSON.stringify(obj);
+// const myJSON = JSON.stringify(obj);
 
-console.log(myJSON);
+// console.log(myJSON);
 
-const arr = ["John", "Peter", "Sally", "Jane"];
+// const arr = ["John", "Peter", "Sally", "Jane"];
 
-console.log(arr);
+// console.log(arr);
 
-const muArr = JSON.stringify(arr);
-console.log(muArr);
+// const muArr = JSON.stringify(arr);
+// console.log(muArr);
+
+const myJSON = '{"name":"John", "age":30, "car":null}';
+
+const myObj = JSON.parse(myJSON);
+
+for(const x in myObj) {
+    console.log(myObj[x]);
+}
