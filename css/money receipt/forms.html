@@ -4,8 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #continer{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: yellow;
+        }
+        #animate{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background: red;
+        }
+    </style>
 </head>
 <body>
-    <form action=""></form>
+    <p>
+        <button onclick="myMove()">Click Me</button>
+    </p>
+    <div id="continer">
+        <div id="animate"></div>
+    </div>
+
+    <script>
+        function myMove() {
+            let id = null;
+            const element = document.getElementById("animate");
+            let pos = 0;
+            clearInterval(id);
+            id = setInterval(frame, 5);
+            function frame() {
+                if(pos == 350) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    element.style.top = pos + 'px';
+                    element.style.left = pos + 'px';
+                }
+            }
+        }
+    </script>
 </body>
 </html>

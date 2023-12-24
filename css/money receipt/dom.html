@@ -6,13 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="demo"></p>
+    <p id="demo">Hello World!</p>
+    <p id="demo1">Hello World 2!</p>
+    <button type="button" onclick="document.getElementById('demo1').style.fontSize='60px'">click me</button>
+
+    <input type="button" value="Hide Text"
+    onclick="document.getElementById('demo').style.visibility='hidden'">
+    <input type="button" value="Show Text"
+    onclick="document.getElementById('demo').style.visibility='visible'">
 
     <img id="myImg" src="Safwah-Limited-logo.png" alt="">
 
     <script>
-        document.getElementById('demo').innerHTML = "Date: " + Date();
+        // document.getElementById('demo').innerHTML = "Date: " + Date();
         document.getElementById('myImg').src = "Riaj-Small.jpeg";
+        const element = document.getElementById('demo')
+        element.style.color = "red";
+        element.style.fontSize = "30px";
+
     </script>
 </body>
 </html>
