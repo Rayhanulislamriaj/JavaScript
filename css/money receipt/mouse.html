@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mouse{
+            background: red;
+            width: 120px;
+            height: 20px;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mouse" onmouseover="mOver(this)" onmouseout="mOut(this)">
+        Mouse Over Me
+    </div>
+    <br>
+    <div class="mouse" onmousedown="mDown(this)" onmouseup="mUp(this)">
+        Click Me
+    </div>
+
+    <script>
+        function mOver(obj){
+            obj.innerHTML = "Thanks";
+        }
+        function mOut(obj){
+            obj.innerHTML = "Mouse Over Me";
+        }
+
+        function mDown(obj){
+            obj.innerHTML = "Release Me";
+        }
+        function mUp(obj){
+            obj.innerHTML = "Thank You";
+        }
+    </script>
+</body>
+</html>
