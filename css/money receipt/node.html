@@ -19,8 +19,18 @@
         para.appendChild(node);
 
         const element = document.getElementById("div1");
+        const child = document.getElementById("p1");
+        const child2 = document.getElementById("p2");
 
-        element.appendChild(para);
+        element.replaceChild(para, child2);
+
+        // child.parentNode.removeChild(child2);
+
+        // child2.remove();
+        // element.removeChild(child2);
+
+        // element.appendChild(para);
+        // element.insertBefore(para, child);
     </script>
 </body>
 </html>

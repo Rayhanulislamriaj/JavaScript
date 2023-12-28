@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello world!</p>
+    <p>Hello Bangladesh!</p>
+    <p>Hello Riaj!</p>
+
+    <button onclick="myFucntion()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+        const myCollection = document.getElementsByTagName("p");
+
+        function myFucntion() {
+            for(let i=0; i<myCollection.length; i++) {
+                myCollection[i].style.color = "coral";
+            }
+        }
+
+        // const element = document.getElementById("demo");
+
+        // element.innerHTML = "Riaj Change the default values: " + 
+        //    myCollection[1].innerHTML;
+           
+        //    element.innerHTML = `there are ${myCollection.length} paragraph elements`;
+    </script>
+</body>
+</html>
